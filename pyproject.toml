@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "prepa"
+version = "0.1.0"
+description = ""
+authors = ["Zakaria Sriti <zsriti@athoria.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.14"
+pydantic = "^2"
+pyyaml = "^6.0.3"
+anthropic = "^1.15.0"
+llama-cpp-python = "^0.3.36"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.1.1"
+ruff = "^0.17.1"
+mypy = "^2.4.0"
+types-pyyaml = "^6.0.12.20260906"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
