@@ -1,23 +1,12 @@
-# Préparation avant le chronomètre
 
-Le test suppose que vous disposez de Python 3.11 ou plus récent, d’un IDE, de Git et d’un compte
-GitHub permettant de publier un dépôt et d’utiliser GitHub Actions dans un quota gratuit disponible.
-Le dépôt peut être privé si l’évaluateur peut y accéder.
 
-Les prérequis système nécessaires à votre environnement local doivent être opérationnels avant T0.
-L’installation du système, une éventuelle virtualisation locale et les difficultés de compte doivent
-être résolues avant le début du test. Aucun GPU ou compte cloud payant n’est requis.
+j'ai essaye de le fair emarcher de bout en bout, mon domain metier depend d abstractions en defenissant des contrats des contrats, comme ça on fait d el inversion de dependance
+ce que j aurai fait c deja faire les test en TDD avec des fixtures, des parametrize pour gere plsuieurs cas, lagestion des cas limites, si on a pas la donnee, en ce qui conderne les ereeurs j aurai clarifier toute sles erreurs possibles notammant ceelles qui nous interessent da validtaion et tt ça en creant des classe d exception propres a chaque domaine d erreur et puis des classes filles pour chaucne qui permettront de remonter les erreur, j aurai aussi dcoumenté
+j aurai aussi fait le loading des documents pour  assurer qu ils sont conformes, et les ereeurs nous auraient permises de valider ceà,
 
-Avant T0, vous pouvez installer des outils publics, vérifier génériquement votre environnement et
-précharger des ressources publiques afin d’éviter que la bande passante n’absorbe le créneau.
-Aucun code de réalisation du sujet ne doit être développé à ce stade.
+j auria pris en charges plusieurs inputs, j aurai cree des classes avec des fonctions chaucne propre a son besoin (analyser, loader .. )
 
-Pendant les 90 minutes, Internet, la documentation et les téléchargements publics restent autorisés.
-L’utilisation de GitHub Copilot et de tout autre assistant de code ou assistant IA pour concevoir,
-générer, compléter, expliquer, modifier ou déboguer la réalisation du test est interdite, y compris
-depuis un site Web ou avec un modèle local. Désactivez les fonctions génératives de l’IDE avant T0.
-Les fonctions non génératives ordinaires de l’IDE restent autorisées.
-Le modèle local de l’application sert à l’analyse des données du sujet, pas à l’aide au développement.
-Le lancement final doit gérer automatiquement les ressources applicatives manquantes.
+j'aurai enrichit le prompta
 
-Le temps de travail commence à l’ouverture de l’énoncé, une fois les prérequis vérifiés.
+j aurai assuré une bonne clean architetcure
+j aurai ajoute desretries avec un max iteration pour permettre au LLM d ameliorer ses reponses et iterer sur le resultat final et j aurai cree des tools qui devaient lui etre passées chaucne responsbale d une tache

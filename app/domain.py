@@ -1,3 +1,4 @@
+from datetime import date
 from enum import StrEnum
 
 from pydantic import BaseModel, Field
@@ -61,6 +62,25 @@ class Diagnostic(BaseModel):
 class Reference(BaseModel):
     doc_id: str
     section_id: str
+
+
+class ProfilClient(BaseModel):
+    id: str
+    situation_professionnelle: str
+    composition_foyer: str
+    budget_mensuel_eur: int | None
+    projets: list[str]
+    date_mise_a_jour: date
+
+
+class Detention(BaseModel):
+    id: str
+    client_id: str
+    produit_id: str
+    statut: str
+    garanties: list[str]
+    usage_declare: str
+    prime_mensuelle_eur: int
 
 
 class Rapport(BaseModel):
