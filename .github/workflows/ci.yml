@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Installer Poetry
+        run: pipx install poetry
+
+      # llama-cpp-python se compile à l'installation : on garde le venv en cache
+      - uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-py3.14-${{ hashFiles('poetry.lock') }}
+
+      - name: Installer les dépendances
+        run: poetry install --no-root
+
+      - name: Lint
+        run: |
+          poetry run ruff check .
+          poetry run ruff format --check .
+
+      - name: Typecheck
+        run: poetry run mypy app
+
+      # pytest renvoie 5 quand aucun test n'existe encore : on l'accepte
+      - name: Tests
+        run: poetry run pytest || [ $? -eq 5 ]
