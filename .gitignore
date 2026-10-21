@@ -4,3 +4,5 @@ __pycache__/
 .pytest_cache/
 dist/
 models/
+.ruff_cache/
+.mypy_cache/
